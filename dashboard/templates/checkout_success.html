@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card card-centered">
+      <h2 class="mb-3">Checkout</h2>
+      <p class="mb-4">This is a demo checkout. In a real app, this is where payment and order details go.</p>
+      <a href="{% url 'dashboard:products' %}" class="btn btn-accent">
+        Continue Shopping
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

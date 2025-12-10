@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load shop_filters %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<section class="page-header centered">
+    <h2>Your Cart</h2>
+</section>
+
+<div class="card card-centered">
+    {% if cart_items %}
+        <ul class="cart-list">
+            {% for item in cart_items %}
+                <li class="cart-item">
+                    <div>
+                        <h4>{{ item.product.name }}</h4>
+                        <p class="muted">Quantity: {{ item.quantity }}</p>
+                    </div>
+                    <div class="cart-item-price">
+                        {{ item.line_total|format_price }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="cart-total mb-3">
+            <span>Total</span>
+            <strong>{{ total_price|format_price }}</strong>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="checkout">
+            <button type="submit" class="btn btn-accent px-4">
+                Proceed to Checkout
+            </button>
+        </form>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+</div>
+{% endblock %}

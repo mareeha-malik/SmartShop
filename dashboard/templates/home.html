@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card shadow-sm border-0 bg-white">
+      <div class="card-body p-5 text-center">
+        <h1 class="display-6 mb-3">
+          Welcome to ShopSmart, your calm shopping space.
+        </h1>
+
+        {% if user.is_authenticated %}
+          <p class="lead mb-4">
+            Welcome back, {{ user.username }}! Explore calm, clutter‑free shopping.
+          </p>
+        {% else %}
+          <p class="lead mb-4">
+            Sign in to start shopping and unlock personalized recommendations.
+          </p>
+        {% endif %}
+
+        <a href="{% url 'dashboard:products' %}" class="btn btn-warning btn-lg px-4">
+          Start Shopping
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
