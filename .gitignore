@@ -1,37 +1,22 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # Django
-*.log
-staticfiles/
-media/
 db.sqlite3
+media/
+staticfiles/
+*.log
 
-# Node
-node_modules/
-.next/
+# Virtual environment
+venv/
+
+# Environment variables
 .env
 
-# Docker
-pgdata/
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
