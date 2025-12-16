@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-yvaehoaapu%wgdq4ukaelx*@5628sw+g&^2ex#s^1k0jpibz%2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [smartshop1.pythonanywhere.com]
 
 
 # Application definition
